@@ -1,0 +1,13 @@
+<div class="container-fluid text-left top">
+  <div class="container">
+    <a href="#/myRecipes/recipeForm" class="btn btn-xs btn-default pull-right">Добавить рецепт</a><br>
+    <hr>
+    <div class="row myRecipies">
+      <div class="col-md-6" ng-repeat="recipe in recipesNew">
+        <h2>{{recipe.title}}</h2>
+        <p>{{recipe.description|limitTo: 280}}... </p>
+        <p><a class="btn btn-default" href="#/myRecipes/{{$index}}" role="button">Посмотреть рецепт »</a></p>
+      </div>
+    </div>
+  </div>
+</div>

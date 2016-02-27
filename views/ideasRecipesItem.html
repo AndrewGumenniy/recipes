@@ -1,0 +1,26 @@
+<div class="container-fluid text-center ideasRecipesItem top">
+  <div class="container">
+    <h1>{{title}}</h1>
+  </div>
+
+  <div class="background">
+    <img src="{{photoUrl}}" alt="">
+  </div>
+
+  <div class="container text-left">
+    <div class="row">
+      <br>    
+      <div class="pull-right col-md-2">
+        <a ng-click="saveToRecieps()" href="#/myRecipes/{{id}}" class="btn rightbtn btn-default pull-right">Сохранить</a>
+      </div>
+    </div>
+
+    <p>{{description}}</p>
+    <hr>
+    <ul>
+      <li ng-repeat="ingredient in ingredients track by $index">{{ingredient}}</li>
+    </ul>
+    <hr>
+    <p ng-bind-html="instruction"></p>
+  </div>
+</div>

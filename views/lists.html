@@ -1,0 +1,58 @@
+<div class="container-fluid text-left top lists">
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a data-target="#liked" data-toggle="tab" aria-expanded="true">Избранное</a></li>
+      <li class=""><a data-target="#planned" data-toggle="tab" aria-expanded="false">Запланировано</a></li>
+      <li class=""><a data-target="#purchases" data-toggle="tab" aria-expanded="false">Покупки</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active in" id="liked">
+        <h1>Избранные рецепты</h1>
+        <hr>
+        <div class="row">
+		  <div remark center ng-if="flagForLike!==true">
+            <span class="remark">В этом списке пока ничего нет</span>
+          </div>
+          <div class="col-md-6" ng-repeat="recipe in recipesNew|filter:{liked:1}">
+            <h2>{{recipe.title}}</h2>
+            <p>{{recipe.description|limitTo: 280}}... </p>
+            <p><a class="btn btn-default" href="#/myRecipes/{{recipe.id}}" role="button">Посмотреть рецепт »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="planned">
+        <h1>Запланированные рецепты</h1>
+        <hr>
+        <div class="row">
+          <div remark center  ng-if="flagForPlan!==true">
+            <span class="remark">В этом списке пока ничего нет</span>
+          </div>
+          <div class="col-md-6" ng-repeat="recipe in recipesNew|filter:{planned:1}">
+            <h2>{{recipe.title}}</h2>
+            <p>{{recipe.description|limitTo: 280}}... </p>
+            <p><a class="btn btn-default" href="#/myRecipes/{{recipe.id}}" role="button">Посмотреть рецепт »</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="purchases">
+        <h1>Список покупок по рецептам</h1>
+        <hr>
+        <div class="row">
+          <div remark ng-if="flagForPurchase!==true">
+            <span class="remark">В этом списке пока ничего нет</span>
+          </div>
+          <ul>
+      		  <div  ng-repeat="recipe in recipesNew|filter:{purchase:1}">
+        			<li  ng-repeat="ingredient in recipe.ingredients track by $index" ng-if="ingredient.name">		
+          			{{ingredient.name}}
+              </li>
+              <li  ng-repeat="ingredient in recipe.ingredients track by $index" ng-if="!ingredient.name">		
+        		    {{ingredient}}
+              </li>
+            </div>
+		      </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

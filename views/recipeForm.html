@@ -1,0 +1,68 @@
+<div class="container-fluid top form">
+  <div class="container">
+    <form class="form-horizontal" role="form" ng-submit="addReciept()">
+      <fieldset>
+        <legend>Новый рецепт</legend>
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-3 control-label">Название</label>
+          <div class="col-lg-9">
+            <input type="text" class="form-control" id="inputEmail" required="required" ng-keydown="checkTitle($event)" ng-model="title">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="textArea" class="col-lg-3 control-label">Описание</label>
+          <div class="col-lg-9">
+            <textarea class="form-control" rows="8" id="textArea" required="required" ng-keydown="checkDescription($event)" ng-model="description"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-3 control-label">Фотография(url)</label>
+          <div class="col-lg-9">
+            <input type="text" class="form-control" id="inputEmail" required="required" placeholder="http://" ng-keydown="checkPhotoUrl($event)" ng-model="photoUrl">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-3 control-label">Время готовки</label>
+          <div class="col-lg-9">
+
+            <div class="input-group">
+              <input type="text" class="form-control" id="inputEmail" placeholder="Сколько?" required="required" ng-keydown="checkTime($event)" ng-model="time">
+              <span class="input-group-addon">минут</span>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail" class="col-lg-3 control-label">Ингридиенты</label>
+          <div class="col-lg-9">
+            <span ng-repeat="ingredient in ingredients track by $index">
+          <input  type="text" class="form-control" id="inputEmail" placeholder="Название и количество" required="required" ng-keydown="checkIngredient($event)" ng-model="ingredient.name" ><br></span>
+          </div>
+        </div>
+
+        <div class="form-group ">
+          <div class="col-lg-9 col-lg-offset-3">
+            <a class="btn btn-xs btn-default addbutton " ng-click="add()">Добавить</a>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="textArea" class="col-lg-3 control-label">Инструкция</label>
+          <div class="col-lg-9">
+            <textarea class="form-control" rows="8" id="textArea" required="required" ng-keydown="checkInstruction($event)" ng-model="instruction"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-lg-9 col-lg-offset-3">
+           <button type="submit" class="btn btn-primary submit"> Сохранить</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
