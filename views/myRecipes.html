@@ -1,8 +1,10 @@
 <div class="container-fluid text-left top">
   <div class="container">
+	
     <a href="#/myRecipes/recipeForm" class="btn btn-xs btn-default pull-right">Добавить рецепт</a><br>
+	<a  class="btn btn-xs btn-default pull-right delete" ng-click="deleteAll()">Удалить все рецепты</a>
     <hr>
-    <div class="row myRecipies">
+    <div class="row myRecipies columns">
       <div class="col-md-6" ng-repeat="recipe in recipesNew">
         <h2>{{recipe.title}}</h2>
         <p>{{recipe.description|limitTo: 280}}... </p>

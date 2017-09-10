@@ -1,33 +1,41 @@
 recipeApp.controller('changeButtonController',
   ['$scope', '$routeParams','$localStorage', function ($scope, $routeParams, $localStorage) {
-    $scope.item = $routeParams.itemId;
-    $scope.recipesNew = $localStorage.recipesNew;
-    var ingredientsArray=[];
-   
-    $scope.title=$scope.recipesNew[$scope.item].title;
-    $scope.photoUrl=$scope.recipesNew[$scope.item].photoUrl;
-    $scope.description=$scope.recipesNew[$scope.item].description;
-    $scope.time=$scope.recipesNew[$scope.item].time;
-    $scope.instruction=$scope.recipesNew[$scope.item].instruction;
-    
-    $scope.add = function () {
-      $scope.ingredients.push({});
-    };
-    if($scope.recipesNew[$scope.item].ingredients[0].name===undefined){
-      for (var i = 0; i < $scope.recipesNew[$scope.item].ingredients.length; i++) {
-    		 ingredientsArray.push({name:$scope.recipesNew[$scope.item].ingredients[i]})
-    	};
-			$scope.ingredients=ingredientsArray;     
-    }else{
-    	$scope.ingredients=$scope.recipesNew[$scope.item].ingredients;
-		}
-
+    init();
+	function init(){
+		$scope.item = $routeParams.itemId;
+		$scope.recipesNew = $localStorage.recipesNew;
+		var ingredientsArray=[];
+	   
+		$scope.title=$scope.recipesNew[$scope.item].title;
+		$scope.photoUrl=$scope.recipesNew[$scope.item].photoUrl;
+		$scope.description=$scope.recipesNew[$scope.item].description;
+		$scope.time=$scope.recipesNew[$scope.item].time;
+		$scope.instruction=$scope.recipesNew[$scope.item].instruction;
+		
+		$scope.add = function () {
+		  $scope.ingredients.push({});
+		};
+		if($scope.recipesNew[$scope.item].ingredients[0].name===undefined){
+		  for (var i = 0; i < $scope.recipesNew[$scope.item].ingredients.length; i++) {
+				 ingredientsArray.push({name:$scope.recipesNew[$scope.item].ingredients[i]})
+			};
+				$scope.ingredients=ingredientsArray;     
+		}else{
+			$scope.ingredients=$scope.recipesNew[$scope.item].ingredients;
+			}
+	}
+	
+	
     if($localStorage.recipesNew===undefined){
       recipesNew=[];
     }else{
       recipesNew=$localStorage.recipesNew;
     }
     
+	$scope.cancel = function () {	
+		init();
+	}
+	
     $scope.addReciept = function () {
       
       $scope.recipesNew = $localStorage.recipesNew;
@@ -46,7 +54,7 @@ recipeApp.controller('changeButtonController',
         planned:oldPlanned,
         purchase:oldPurchase
       }
-
+	  
       $scope.recipesNew.splice($scope.item, 1, recipeFromForm);
       $scope.deleteAll = function () {
         localStorage.removeItem('ngStorage-recipesNew');

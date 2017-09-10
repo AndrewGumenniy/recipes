@@ -151,8 +151,8 @@ h3 {
 
 .btn-group-justified {
   display: table;
-  width: 50% !important;
-  margin-left: -20px !important;
+  width: 47% !important;
+  margin-left: -27px !important;
   table-layout: fixed;
   border-collapse: separate;
 }
@@ -227,3 +227,103 @@ h3 {
 .activeItemForNav{
 border-bottom:3px solid maroon;
 }
+
+.container .cancel {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.delete{
+	margin-top:0px !important;
+	margin-right:5px;
+}
+
+
+
+.delbtn{
+	margin-left:5px;
+}
+
+
+.del {
+	display: table;
+	width: 32% !important;
+	margin-left: -10px !important;
+	table-layout: fixed;
+	border-collapse: separate;
+}
+.buttons{
+	margin-bottom: 20px
+}
+.btn-delete{
+	background-color:#A37D7D;
+	color:white;
+}
+
+.navbar-default .navbar-nav>li>a:link {
+  background: none;
+  color: black;
+}
+.navbar-default .navbar-nav>li>a:visited {
+  background: none;
+  color: black;
+}
+.btn-change {
+  background-color: rgba(197, 181, 147, 0.85);
+ color:white;
+}
+.btn-change:hover {
+  background-color: rgb(185, 170, 141);
+ color:white;
+}
+
+.btn-delete:hover {
+  background-color: #876767;
+color: white;
+}
+
+.big{
+	
+	padding:8px 14px;
+}
+
+
+.navbar-default .navbar-nav>li>a:active {
+  background: none;
+  color: black;
+}
+
+.container {
+  padding-top: 10px;
+}
+#popUpDialog-bg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+#popUpDialog {
+  position: fixed;
+  width: 250px;
+  left: 50%;
+  margin-left: -125px;
+  margin-top: 20%;
+  padding: 15px;
+  border-radius: 5px;
+  background: white;
+}
+#popUpDialog .content {
+  font-size:16px;
+  font-weight:bold;
+  margin-bottom: 5px;
+  text-align: center;
+}
+#popUpDialog .buttons-container {
+  width: 70%;
+  margin: 0 auto;
+}
+

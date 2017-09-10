@@ -1,7 +1,7 @@
 recipeApp.controller('ideasRecipesItemController', 
 	['$scope','$http','$routeParams','$localStorage', function ($scope,$http,$routeParams,$localStorage) {
 
-		$http.get("https://jsonblob.com/api/jsonBlob/56c089b3e4b01190df4ef1ce").then(function(response) {
+		$http.get("recipes.json").then(function(response) {
     $scope.myData = response.data.recipes; 
  	
     $scope.item = $routeParams.itemId;

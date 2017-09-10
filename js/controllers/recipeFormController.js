@@ -1,5 +1,5 @@
 recipeApp.controller('recipeFormController',
-  ['$scope', '$localStorage', function($scope, $localStorage) {
+  ['$scope', '$localStorage','$http', '$location', function($scope, $localStorage,$http,$location) {
 
     var recipesNew;
     if($localStorage.recipesNew===undefined){
@@ -15,6 +15,10 @@ recipeApp.controller('recipeFormController',
     $scope.add = function () {
       $scope.ingredients.push({});
     };
+ 
+	$scope.currentPath = $location.path();
+	
+ 
  
     $scope.addReciept = function () {
       
@@ -34,11 +38,11 @@ recipeApp.controller('recipeFormController',
       $localStorage.recipesNew = recipesNew;
       document.location.href = '#/myRecipes';
     };
-
+	
     $scope.checkTitle = function(event) {   
       if (event.target.value.length > 199 && event.keyCode != 8) event.preventDefault();  
     }
-
+	
     $scope.checkDescription = function(event) {   
       if (event.target.value.length > 1999 && event.keyCode != 8) event.preventDefault();  
     }

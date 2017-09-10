@@ -6,20 +6,29 @@
     <img src="{{photoUrl}}" alt="">
   </div>
   <div class="container text-left">
-    <div class="row">
+    <div class="row buttons">
       <br>
       <div class="col-md-3">
         <span class="textVerticalAlign">поместить рецепт в:</span></div>
-      <div class="col-md-6 btn-group btn-group-justified">  
-        <a ng-click="addToLiked()" class="btn btn-default {{addClassForLiked}}" >Избранное</a>
+      <div class="col-md-4  btn-group btn-group-justified">  
+        <a ng-click="addToLiked()" class="btn btn-default  {{addClassForLiked}}" >Избранное</a>
         <a ng-click="addToBasket()" class="btn btn-default {{addClassForPurchase}}">Покупки</a>
         <a ng-click="addToPlanned()" class="btn btn-default {{addClassForPlanned}}">План</a>
       </div>
-      <div class="col-md-3">
-        <a href="#/myRecipes/changeButton/{{id}}" class="btn changebtn btn-default pull-right">Изменить</a>
+	   <div class="col-md-2  btn-group btn-group-justified del">  
+        <a href="#/myRecipes/changeButton/{{id}}" class=" btn btn-change " >Изменить</a>
+        <a ng-click="choiseWindowDialog()" class="btn btn-delete">Удалить</a>
+				
       </div>
+     		<pop-up-dialog></pop-up-dialog>
     </div>
     <p>{{description}}</p>
+    <hr>
+	<p>Время приготовления: <span ng-if="time<=100"><b>{{timeInHour}} {{hoursText}} {{time}} {{minutesText}} </b></span>
+	
+	<span ng-if="time==='NaN'"><b>не указано </b></span>
+	<span ng-if="time>=1440"><b>>24 часов </b></span>
+	</p>
     <hr>
     <ul>
       <li ng-repeat="ingredient in ingredients track by $index">{{ingredient}}</li>
@@ -28,3 +37,5 @@
     <p ng-bind-html="instruction"></p>
   </div> 
 </div>
+
+		
