@@ -100,7 +100,7 @@ outline:none !important;
 .carousel-control.right {
   background-image: none;
   top: 50%;
-  right: 24%;
+  right: 9%;
   width: 20px;
   height: 20px;
 }
@@ -108,14 +108,14 @@ outline:none !important;
 .carousel-control.left {
   background-image: none;
   top: 50%;
-  left: 24%;
+  left: 7%;
   width: 20px;
   height: 20px;
 }
 
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-  width: 57%;
+  width: 95%;
   margin: auto;
 }
 
@@ -125,17 +125,17 @@ h2 {
 
 .carousel-inner .h3,
 h3 {
-  font-size: 30px;
+  font-size: 45px;
 }
 
 .carousel-inner p {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 22px;
 }
 
 .carousel-caption {
-  right: 34%;
-  left: 34%;
+  right: 20%;
+  left: 20%;
   padding-bottom: 30px;
 }
 
@@ -326,4 +326,47 @@ color: white;
   width: 70%;
   margin: 0 auto;
 }
-
+@media screen and (max-device-width: 1450px), screen and (max-width: 1450px){
+  .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 57%;
+    margin: auto;
+  }
+  .carousel-caption {
+    right: 34%;
+    left: 34%;
+    padding-bottom: 30px;
+  }
+  .carousel-inner .h3, h3 {
+    font-size: 30px;
+  }
+  .carousel-inner p {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .carousel-control.left {
+    background-image: none;
+    top: 50%;
+    left: 24%;
+    width: 20px;
+    height: 20px;
+  }
+  .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    font-size: 30px;
+  }
+  .carousel-control.right {
+    background-image: none;
+    top: 50%;
+    right: 24%;
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-device-width: 1100px), screen and (max-width: 1100px){
+  
+}
+@media screen and (max-device-width: 800px), screen and (max-width: 800px){
+  
+}
